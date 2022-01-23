@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+    #divantall{
+      display: flex;
+      flex-direction: row;
+        margin-bottom: 20px;
+    }
+
+    #antall{
+      width:35px;
+    }
+    #divFornavn{
+      display: flex;
+      flex-direction: row;
+    margin-bottom: 10px;
+    }
+
+    #divEtternavn{
+      display: flex;
+      flex-direction: row;
+    margin-bottom: 10px;
+    }
+
+    #divEpost{
+      display: flex;
+      flex-direction: row;
+    margin-bottom: 10px;
+    }
+
+    #divTelnu{
+      display: flex;
+      flex-direction: row;
+    margin-bottom: 10px;
+    }
+
+    #fornavn{
+      margin-left: 25px;;
+    }
+    #etternavn{
+      margin-left: 22px;
+    }
+    #telnu{
+      margin-left: 23px;
+    }
+    #epost{
+      margin-left: 48px;
+    }
+    </style>
+  </head>
+
+
+  <body>
+  <div class="container">
+    <form method="post">
+    <h1 id="header">Bestilling av kinobiletter </h1>
+
+    <label for="filmValg">Velg film</label>
+    <select name="Filmer" id="filmValg" >
+    <option > Velg film her </option>
+        <option value="Film 1" >Film 1 </option>
+      <option value="Film 2" >Film 2 </option>
+      <option value="Film 3" >Film 3 </option>
+      <option value="Film 4"  >Film 4 </option>
+
+    </select>
+
+    <br><br>
+
+
+<div id="divantall">
+  <div id="smaller" class="smallerdivantall">
+
+
+      <label for="antall">Antall:</label>
+    <input id="antall" name="" type="text" >
+  </div>
+    <span id="errorAntall" style="color:red"> </span>
+  </div>
+
+<div id="divFornavn">
+  <div id="smaller" class="smallerdivfornavn">
+
+
+      <label for="fornavn">Fornavn:  </label>
+      <input id="fornavn" type="text" >
+    </div>
+      <span id="errorFornavn" style="color:red" > </span>
+      </div>
+
+            <div id="divEtternavn">
+              <div id="smaller" class="smallerdivetternavn">
+
+            <label for="etternavn">Etternavn</label>
+            <input id="etternavn" type="text" >
+          </div>
+        <span id="errorEtternanv" style="color:red"> </span>
+
+      </div>
+      <div id="divTelnu">
+        <div div id="smaller" class="smallerdiveTelnu">
+      <label for="telnu">Telefonnr </label>
+      <input id="telnu" type="tel" >
+    </div>
+        <span id="errorTelnu" style="color:red"> </span>
+      </div>
+      <div id="divEpost">
+        <div div id="smaller" class="smallerdivepost">
+      <label for="epost">Epost    </label>
+      <input id="epost" type="email" >
+    </div>
+        <span id="errorEpost" style="color:red"> </span>
+    </div>
+      <button type="button"  onclick="pressed()">Kjøp bilett</button>
+
+    <h2 id="last">Alle biletter </h2>
+    <div id="valgtFilm">
+
+    </div>
+<input type="button" value="Slett alle bilettene">
+</form>
+</div>
+  </body>
+
+  <script type="text/javascript">
+
+    function pressed(){
+      /*<---!Den delen jeg opplever problemer--->*/
+      const valgtFilm= document.getElementById("filmValg").value
+    const array=[]
+    array.push(valgtFilm)
+  console.log(array)
+array.length =0
+console.log(array);
+  /*<---!FDen delen jeg opplever problemer--->*/
+
+      var name=document.getElementById("fornavn").value;
+
+        var surname=document.getElementById("etternavn").value;
+        var quantity=document.getElementById("antall").value;
+
+        var telno=document.getElementById("telnu").value;
+
+        var email=document.getElementById("epost").value;
+
+    if (name === '' || name == null) {
+document.getElementById("errorFornavn").innerHTML="Må skrive noe inn i etternavn";
+
+    }
+
+    if (surname === '' || surname == null) {
+    document.getElementById("errorEtternanv").innerHTML="Må skrive noe inn i etternavn";
+
+    }
+    if (email === '' ) {
+    document.getElementById("errorEpost").innerHTML="Må skrive noe inn i epost";
+
+    }
+    if (quantity.length < 1) {
+      document.getElementById("errorAntall").innerHTML="Må skrive noe inn i antall";
+    }
+    if (telno.length < 8) {
+      document.getElementById("errorTelnu").innerHTML="Må skrive noe inn i telno";
+    }
+
+    // form data
+    const data = {
+        'name': name,
+        'surname': surname,
+        'quantity': quantity,
+        'telno': telno,
+        'email': email,
+    }
+    console.log(data)
+
+    return false
+    }
+  </script>
+</html>
