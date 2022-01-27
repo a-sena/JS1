@@ -1,182 +1,192 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
+<head>
     <meta charset="utf-8">
     <title></title>
     <style>
-    #divantall{
-      display: flex;
-      flex-direction: row;
-        margin-bottom: 20px;
-    }
+        #divantall{
+            display: flex;
+            flex-direction: row;
+            margin-bottom: 20px;
+        }
 
-    #antall{
-      width:35px;
-    }
-    #divFornavn{
-      display: flex;
-      flex-direction: row;
-    margin-bottom: 10px;
-    }
+        #antall{
+            width:35px;
+        }
+        #divFornavn{
+            display: flex;
+            flex-direction: row;
+            margin-bottom: 10px;
+        }
 
-    #divEtternavn{
-      display: flex;
-      flex-direction: row;
-    margin-bottom: 10px;
-    }
+        #divEtternavn{
+            display: flex;
+            flex-direction: row;
+            margin-bottom: 10px;
+        }
 
-    #divEpost{
-      display: flex;
-      flex-direction: row;
-    margin-bottom: 10px;
-    }
+        #divEpost{
+            display: flex;
+            flex-direction: row;
+            margin-bottom: 10px;
+        }
 
-    #divTelnu{
-      display: flex;
-      flex-direction: row;
-    margin-bottom: 10px;
-    }
+        #divTelnu{
+            display: flex;
+            flex-direction: row;
+            margin-bottom: 10px;
+        }
 
-    #fornavn{
-      margin-left: 25px;;
-    }
-    #etternavn{
-      margin-left: 22px;
-    }
-    #telnu{
-      margin-left: 23px;
-    }
-    #epost{
-      margin-left: 48px;
-    }
+        #fornavn{
+            margin-left: 25px;;
+        }
+        #etternavn{
+            margin-left: 22px;
+        }
+        #telnu{
+            margin-left: 23px;
+        }
+        #epost{
+            margin-left: 48px;
+        }
     </style>
-  </head>
+</head>
 
 
-  <body>
-  <div class="container">
+<body>
+<div class="container">
     <form method="post">
-    <h1 id="header">Bestilling av kinobiletter </h1>
+        <h1 id="header">Bestilling av kinobiletter </h1>
 
-    <label for="filmValg">Velg film</label>
-    <select name="Filmer" id="filmValg" >
-    <option > Velg film her </option>
-        <option value="Film 1" >Film 1 </option>
-      <option value="Film 2" >Film 2 </option>
-      <option value="Film 3" >Film 3 </option>
-      <option value="Film 4"  >Film 4 </option>
+        <label for="filmValg">Velg film</label>
+        <select name="Filmer" id="filmValg" >
+            <option > Velg film her </option>
+            <option value="Film 1" >Film 1 </option>
+            <option value="Film 2" >Film 2 </option>
+            <option value="Film 3" >Film 3 </option>
+            <option value="Film 4"  >Film 4 </option>
 
-    </select>
+        </select>
 
-    <br><br>
-
-
-<div id="divantall">
-  <div id="smaller" class="smallerdivantall">
+        <br><br>
 
 
-      <label for="antall">Antall:</label>
-    <input id="antall" name="" type="text" >
-  </div>
-    <span id="errorAntall" style="color:red"> </span>
-  </div>
-
-<div id="divFornavn">
-  <div id="smaller" class="smallerdivfornavn">
+        <div id="divantall">
+            <div  class="smallerdivantall">
 
 
-      <label for="fornavn">Fornavn:  </label>
-      <input id="fornavn" type="text" >
-    </div>
-      <span id="errorFornavn" style="color:red" > </span>
-      </div>
+                <label for="antall">Antall:</label>
+                <input id="antall" name="velg" type="text" >
+            </div>
+            <span id="errorAntall" style="color:red"> </span>
+        </div>
 
-            <div id="divEtternavn">
-              <div id="smaller" class="smallerdivetternavn">
+        <div id="divFornavn">
+            <div class="smallerdivfornavn">
 
-            <label for="etternavn">Etternavn</label>
-            <input id="etternavn" type="text" >
-          </div>
-        <span id="errorEtternanv" style="color:red"> </span>
 
-      </div>
-      <div id="divTelnu">
-        <div div id="smaller" class="smallerdiveTelnu">
-      <label for="telnu">Telefonnr </label>
-      <input id="telnu" type="tel" >
-    </div>
-        <span id="errorTelnu" style="color:red"> </span>
-      </div>
-      <div id="divEpost">
-        <div div id="smaller" class="smallerdivepost">
-      <label for="epost">Epost    </label>
-      <input id="epost" type="email" >
-    </div>
-        <span id="errorEpost" style="color:red"> </span>
-    </div>
-      <button type="button"  onclick="pressed()">Kjøp bilett</button>
+                <label for="fornavn">Fornavn:  </label>
+                <input id="fornavn" navn="velg" type="text" >
+            </div>
+            <span id="errorFornavn" style="color:red" > </span>
+        </div>
 
-    <h2 id="last">Alle biletter </h2>
-    <div id="valgtFilm">
+        <div id="divEtternavn">
+            <div class="smallerdivetternavn">
 
-    </div>
-<input type="button" value="Slett alle bilettene">
-</form>
+                <label for="etternavn">Etternavn</label>
+                <input id="etternavn"  navn="velg" type="text" >
+            </div>
+            <span id="errorEtternanv" style="color:red"> </span>
+
+        </div>
+        <div id="divTelnu">
+            <div class="smallerdiveTelnu">
+                <label for="telnu">Telefonnr </label>
+                <input id="telnu"  navn="velg" type="tel" >
+            </div>
+            <span id="errorTelnu" style="color:red"> </span>
+        </div>
+        <div id="divEpost">
+            <div class="smallerdivepost">
+                <label for="epost">Epost    </label>
+                <input id="epost"  navn="velg" type="email" >
+            </div>
+            <span id="errorEpost" style="color:red"> </span>
+        </div>
+        <button type="button"  onclick="pressed()">Kjøp bilett</button>
+
+        <h2 id="last">Alle biletter </h2>
+        <div id="visfilmer">
+
+
+        </div>
+        <button type="button"  onclick="slett()" >Slett alle bilettene</button>
+    </form>
 </div>
-  </body>
+</body>
 
-  <script type="text/javascript">
-
+<script >
+let filmliste=[];
     function pressed(){
-      /*<---!Den delen jeg opplever problemer--->*/
-      const valgtFilm= document.getElementById("filmValg").value
-    const array=[]
-    array.push(valgtFilm)
-  console.log(array)
-array.length =0
-console.log(array);
-  /*<---!FDen delen jeg opplever problemer--->*/
+        let name=document.getElementById("fornavn").value;
 
-      var name=document.getElementById("fornavn").value;
+        let surname=document.getElementById("etternavn").value;
+        let quantity=document.getElementById("antall").value;
 
-        var surname=document.getElementById("etternavn").value;
-        var quantity=document.getElementById("antall").value;
+        let telno=document.getElementById("telnu").value;
 
-        var telno=document.getElementById("telnu").value;
+        let email=document.getElementById("epost").value;
 
-        var email=document.getElementById("epost").value;
 
-    if (name === '' || name == null) {
-document.getElementById("errorFornavn").innerHTML="Må skrive noe inn i etternavn";
+
+        if (name === '' || name == null) {
+            document.getElementById("errorFornavn").innerHTML="Må skrive noe inn i etternavn";
+
+        }
+
+        if (surname === '' || surname == null) {
+            document.getElementById("errorEtternanv").innerHTML="Må skrive noe inn i etternavn";
+
+        }
+        if (email === '' ) {
+            document.getElementById("errorEpost").innerHTML="Må skrive noe inn i epost";
+
+        }
+        if (quantity.length < 1) {
+            document.getElementById("errorAntall").innerHTML="Må skrive noe inn i antall";
+        }
+        if (telno.length < 8) {
+            document.getElementById("errorTelnu").innerHTML="Må skrive noe inn i telno";
+        }
+        else {
+            let filmene = {
+                fornavn: document.getElementById("fornavn").value,
+                etternavn: document.getElementById("etternavn").value,
+                epost: document.getElementById("epost").value,
+                telnu: document.getElementById("telnu").value,
+                filmvalg: document.getElementById("filmValg").value,
+                antall: document.getElementById("antall").value
+            }
+            filmliste.push(filmene)
+
+            let ut = "<table><tr><th> Fornavn</th><th>Etternavn</th><th>Email</th><th>Telno</th><th>Film Navn</th><th>Antall</th></tr>"
+            for (let filmene of filmliste) {
+                ut += "<tr><td>" + filmene.fornavn + "</td><td>" + filmene.etternavn + "</td><td>" + filmene.epost + "</td><td>" +
+                    filmene.telnu + "</td><td>" + filmene.filmvalg + "</td><td>" + filmene.antall + "</td></tr>"
+            }
+            ut += "</table>"
+            document.getElementById("visfilmer").innerHTML += ut
+
+        }
+
+
 
     }
+function slett(){
 
-    if (surname === '' || surname == null) {
-    document.getElementById("errorEtternanv").innerHTML="Må skrive noe inn i etternavn";
-
-    }
-    if (email === '' ) {
-    document.getElementById("errorEpost").innerHTML="Må skrive noe inn i epost";
-
-    }
-    if (quantity.length < 1) {
-      document.getElementById("errorAntall").innerHTML="Må skrive noe inn i antall";
-    }
-    if (telno.length < 8) {
-      document.getElementById("errorTelnu").innerHTML="Må skrive noe inn i telno";
+        filmliste.clear()
     }
 
-    // form data
-    const data = {
-        'name': name,
-        'surname': surname,
-        'quantity': quantity,
-        'telno': telno,
-        'email': email,
-    }
-    console.log(data)
-
-    return false
-    }
-  </script>
+</script>
 </html>
