@@ -127,7 +127,7 @@
 </body>
 
 <script >
-let filmliste=[];
+    let filmliste=[];
     function pressed(){
         let name=document.getElementById("fornavn").value;
 
@@ -183,9 +183,16 @@ let filmliste=[];
 
 
     }
-function slett(){
+    function slett(){
+        
+    document.getElementById("visfilmer").innerHTML = "";
+        fornavn.value = "";
+        etternavn.value = "";
+        epost.value = "";
+        telnu.value = "";
+        filmvalg.value = "";
+        antall.value = "";
 
-        filmliste.clear()
     }
 
 </script>
